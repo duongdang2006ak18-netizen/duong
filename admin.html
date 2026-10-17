@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10120f">
+  <title>Quản trị — OVR CLUB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="admin.js" defer></script>
+</head>
+<body class="admin-page">
+  <main class="admin-shell">
+    <header class="admin-top">
+      <div>
+        <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">O<span>.</span></span><span class="brand-name">OVR<span>CLUB</span></span></a>
+        <h1>TRANG <span>QUẢN TRỊ.</span></h1>
+      </div>
+      <div class="admin-toolbar"><a class="button button-secondary" href="/">VỀ CỬA HÀNG</a><button class="button button-secondary" id="logout-button" type="button" hidden>ĐĂNG XUẤT</button></div>
+    </header>
+
+    <div class="admin-banner" id="admin-message" role="status" aria-live="polite"></div>
+
+    <section class="admin-panel admin-login" id="login-panel" aria-labelledby="login-title">
+      <h2 id="login-title">ĐĂNG NHẬP</h2>
+      <p>Chỉ người quản trị mới có thể thêm tài khoản, xem đơn và xác nhận đã nhận tiền.</p>
+      <form class="admin-form" id="login-form">
+        <label class="form-wide">TÊN ĐĂNG NHẬP<input name="username" required minlength="3" maxlength="128" autocomplete="username"></label>
+        <label class="form-wide">MẬT KHẨU<input name="password" required type="password" maxlength="256" autocomplete="current-password"></label>
+        <button class="button button-primary" type="submit">ĐĂNG NHẬP <span aria-hidden="true">↗</span></button>
+      </form>
+    </section>
+
+    <div id="dashboard" hidden>
+      <section class="admin-panel" aria-labelledby="inventory-title">
+        <h2 id="inventory-title">THÊM TÀI KHOẢN VÀO KHO</h2>
+        <p class="admin-help">Thông tin đăng nhập acc được mã hóa trước khi lưu. Có thể tải tối đa 5 ảnh JPG, PNG hoặc WebP; mỗi ảnh tối đa 5 MB.</p>
+        <form class="admin-form" id="product-form">
+          <label>TÊN TÀI KHOẢN<input name="name" required minlength="2" maxlength="80" placeholder="Ví dụ: SQUAD ELITE"></label>
+          <label>OVR<input name="ovr" required type="number" min="1" max="200" step="1"></label>
+          <label>GIÁ BÁN (VND)<input name="price" required type="number" min="1000" max="100000000" step="1000"></label>
+          <label>TÊN ĐĂNG NHẬP / EMAIL ACC<input name="username" required maxlength="200" autocomplete="off"></label>
+          <label>MẬT KHẨU ACC<input name="password" required type="password" maxlength="200" autocomplete="new-password"></label>
+          <label class="form-wide">ẢNH MINH HỌA (TỐI ĐA 5 ẢNH)<input name="images" type="file" accept="image/jpeg,image/png,image/webp" multiple></label>
+          <label class="form-wide">MÔ TẢ ĐỘI HÌNH<textarea name="description" maxlength="500" placeholder="Mùa thẻ, đội hình, thông tin cần lưu ý (tối đa 500 ký tự)"></textarea></label>
+          <button class="button button-primary" type="submit">LƯU ACC VÀO KHO <span aria-hidden="true">↗</span></button>
+        </form>
+      </section>
+
+      <section class="admin-panel" aria-labelledby="orders-title">
+        <div class="admin-toolbar"><h2 id="orders-title">ĐƠN HÀNG MỚI NHẤT</h2><button class="button button-secondary" id="refresh-orders" type="button">LÀM MỚI</button></div>
+        <p class="admin-help">Kiểm tra giao dịch trong tài khoản ngân hàng trước khi xác nhận đã thanh toán. Xác nhận đơn sẽ đánh dấu acc đã bán và mở thông tin đăng nhập cho khách.</p>
+        <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>MÃ ĐƠN / THỜI GIAN</th><th>KHÁCH HÀNG</th><th>ACC / TỔNG TIỀN</th><th>TRẠNG THÁI</th><th>THAO TÁC</th></tr></thead><tbody id="orders-body"></tbody></table></div>
+        <div class="admin-empty" id="orders-empty" hidden>Chưa có đơn hàng.</div>
+      </section>
+
+      <section class="admin-panel" aria-labelledby="wheel-topups-title">
+        <div class="admin-toolbar"><h2 id="wheel-topups-title">YÊU CẦU NẠP ĐIỂM</h2><button class="button button-secondary" id="refresh-topups" type="button">LÀM MỚI</button></div>
+        <p class="admin-help">Kiểm tra giao dịch ngân hàng theo đúng số tiền và mã nạp trước khi duyệt. Duyệt sẽ cộng điểm vào ví; mỗi yêu cầu chỉ được xử lý một lần.</p>
+        <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>MÃ NẠP / THỜI GIAN</th><th>TÀI KHOẢN KHÁCH</th><th>SỐ TIỀN / ĐIỂM</th><th>TRẠNG THÁI</th><th>THAO TÁC</th></tr></thead><tbody id="topups-body"></tbody></table></div>
+        <div class="admin-empty" id="topups-empty" hidden>Chưa có yêu cầu nạp điểm.</div>
+      </section>
+
+      <section class="admin-panel" aria-labelledby="wheel-prizes-title">
+        <div class="admin-toolbar"><h2 id="wheel-prizes-title">CÀI ĐẶT GIẢI VÒNG QUAY</h2><button class="button button-secondary" id="refresh-wheel-prizes" type="button">LÀM MỚI</button></div>
+        <p class="admin-help">Chọn các acc còn hàng làm giải và đặt tỷ lệ đến 2 chữ số thập phân. Tổng tỷ lệ cài đặt phải đúng 100%; acc trúng sẽ được đánh dấu đã bán. Nếu một giải hết hàng, tỷ lệ được tự chuẩn hóa theo các giải còn hàng và hiển thị công khai. Chi phí lượt quay là 10 điểm.</p>
+        <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>CHỌN GIẢI</th><th>ACC / OVR</th><th>TỶ LỆ (%)</th><th></th></tr></thead><tbody id="wheel-prizes-body"></tbody></table></div>
+        <div class="admin-empty" id="wheel-prizes-empty" hidden>Kho chưa có acc còn hàng để cài làm giải.</div>
+        <div class="admin-toolbar wheel-admin-footer"><span class="admin-help" id="wheel-probability-total">Tổng tỷ lệ: 0,00%</span><button class="button button-primary" id="save-wheel-prizes" type="button">LƯU GIẢI VÀ TỶ LỆ</button></div>
+      </section>
+
+      <section class="admin-panel" aria-labelledby="products-title">
+        <div class="admin-toolbar"><h2 id="products-title">KHO TÀI KHOẢN</h2><button class="button button-secondary" id="refresh-products" type="button">LÀM MỚI</button></div>
+        <p class="admin-help">Mỗi acc tối đa 5 ảnh. Có thể chọn thêm nhiều ảnh cùng lúc hoặc xóa từng ảnh trong bộ sưu tập.</p>
+        <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>TÊN ACC / OVR</th><th>ẢNH MINH HỌA</th><th>GIÁ</th><th>TÌNH TRẠNG</th><th>NGÀY THÊM</th><th></th></tr></thead><tbody id="products-body"></tbody></table></div>
+        <div class="admin-empty" id="products-empty" hidden>Kho chưa có tài khoản.</div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

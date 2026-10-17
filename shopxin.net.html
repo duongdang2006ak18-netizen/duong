@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10120f">
+  <meta name="description" content="Khám phá tài khoản FC Mobile VN, đặt hàng và thanh toán chuyển khoản.">
+  <title>OVR CLUB — Acc FC Mobile VN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="announcement">
+    <span class="live-dot" aria-hidden="true"></span>
+    <span>Thanh toán chuyển khoản <span class="announcement-divider">/</span> Đơn hàng được xác nhận thủ công</span>
+    <a href="#san-pham">Khám phá acc <span aria-hidden="true">↗</span></a>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="OVR CLUB - Trang chủ">
+      <span class="brand-mark" aria-hidden="true">O<span>.</span></span>
+      <span class="brand-name">OVR<span>CLUB</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Điều hướng chính">
+      <a class="nav-link active" href="#san-pham">Tài khoản</a>
+      <a class="nav-link" href="#thu-van-may">Thử vận may</a>
+      <a class="nav-link" href="#quyen-loi">Quyền lợi</a>
+      <a class="nav-link" href="#huong-dan">Hướng dẫn</a>
+    </nav>
+    <button class="cart-trigger" id="open-cart" type="button" aria-label="Mở giỏ hàng">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.1a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.4L22 8H6M10 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm8 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"/></svg>
+      <span>Giỏ hàng</span>
+      <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+    </button>
+    <button class="account-trigger" id="open-customer" type="button">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
+      <span id="customer-trigger-label">Tài khoản</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> FC MOBILE VIỆT NAM <span class="eyebrow-line"></span></div>
+        <h1 id="hero-title">ĐỘI HÌNH<br>TRONG MƠ<span class="title-period">.</span><br><span class="title-outline">BẮT ĐẦU TỪ ĐÂY.</span></h1>
+        <p>Chọn tài khoản hợp gu, sẵn sàng ra sân. Khám phá bộ sưu tập acc FC Mobile đa dạng OVR và ngân sách.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#san-pham">KHÁM PHÁ TÀI KHOẢN <span aria-hidden="true">↘</span></a>
+          <span class="hero-caption"><span class="live-dot" aria-hidden="true"></span> DANH SÁCH ACC ĐANG CÓ</span>
+        </div>
+        <div class="hero-stats" aria-label="Thông tin cửa hàng">
+          <div><strong id="hero-stock-count">—</strong><span>ACC ĐANG CÓ</span></div>
+          <div><strong>24<span>H</span></strong><span>GIỮ ĐƠN CHỜ CHUYỂN KHOẢN</span></div>
+          <div><strong>1<span>/1</span></strong><span>XÁC NHẬN THỦ CÔNG</span></div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="Minh họa thẻ cầu thủ FC Mobile">
+        <div class="visual-orbit orbit-one"></div>
+        <div class="visual-orbit orbit-two"></div>
+        <div class="visual-label label-top"><span class="label-dot"></span> YOUR NEXT XI</div>
+        <div class="hero-player-card">
+          <div class="player-card-top"><span>ST</span><strong>109</strong></div>
+          <div class="player-silhouette" aria-hidden="true"><span>✦</span></div>
+          <div class="player-card-bottom"><span>OVR</span><strong>YOUR<br>LEGEND</strong><i>FC</i></div>
+        </div>
+        <div class="floating-tag tag-rating"><span>✦</span> BUILD YOUR SQUAD</div>
+        <div class="floating-tag tag-season"><span class="season-dot"></span> SEASON 26</div>
+        <div class="visual-index">001 <span>/</span> 008</div>
+        <div class="hero-grid" aria-hidden="true"></div>
+      </div>
+      <a class="scroll-cue" href="#san-pham"><span class="scroll-line"></span> CUỘN ĐỂ KHÁM PHÁ</a>
+    </section>
+
+    <section class="catalog section-wrap" id="san-pham" aria-labelledby="catalog-title">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-line"></span> THE TRANSFER MARKET</div>
+          <h2 id="catalog-title">CHỌN <span>ĐỘI HÌNH.</span></h2>
+        </div>
+        <p class="section-description">Tìm chiếc acc tiếp theo cho hành trình chinh phục sân cỏ của bạn.</p>
+      </div>
+
+      <div class="catalog-toolbar">
+        <div class="filter-list" role="group" aria-label="Lọc theo OVR">
+          <button class="filter-chip active" type="button" data-filter="all" aria-pressed="true">TẤT CẢ</button>
+          <button class="filter-chip" type="button" data-filter="110" aria-pressed="false">OVR 110+</button>
+          <button class="filter-chip" type="button" data-filter="105" aria-pressed="false">OVR 105+</button>
+          <button class="filter-chip" type="button" data-filter="budget" aria-pressed="false">GIÁ TỐT</button>
+        </div>
+        <div class="catalog-controls">
+          <label class="search-box">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
+            <span class="visually-hidden">Tìm acc</span>
+            <input id="search-input" type="search" placeholder="Tìm OVR, đội hình..." autocomplete="off">
+          </label>
+          <label class="sort-box">
+            <span class="visually-hidden">Sắp xếp tài khoản</span>
+            <select id="sort-select">
+              <option value="featured">Sắp xếp: nổi bật</option>
+              <option value="price-asc">Giá: thấp đến cao</option>
+              <option value="price-desc">Giá: cao đến thấp</option>
+              <option value="ovr-desc">OVR: cao đến thấp</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="results-note" id="results-note" aria-live="polite"></div>
+      <div class="product-grid" id="product-grid"></div>
+      <div class="empty-state" id="empty-state" hidden>
+        <span aria-hidden="true">⌕</span>
+        <h3>Chưa tìm thấy đội hình phù hợp</h3>
+        <p>Thử từ khóa khác hoặc chọn một bộ lọc khác nhé.</p>
+        <button class="button button-secondary" id="reset-filters" type="button">XÓA BỘ LỌC</button>
+      </div>
+      <p class="catalog-disclaimer">Thông tin tài khoản được cung cấp bởi người bán. Kiểm tra kỹ chi tiết trước khi đặt hàng.</p>
+    </section>
+
+    <section class="luck-section section-wrap" id="thu-van-may" aria-labelledby="luck-title">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-line"></span> OVR LUCKY CLUB</div>
+          <h2 id="luck-title">THỬ <span>VẬN MAY.</span></h2>
+        </div>
+        <p class="section-description">Nạp điểm qua chuyển khoản, quản trị viên xác nhận thủ công. Mỗi lượt trúng một acc trong danh sách giải; tỷ lệ được công khai trước khi quay.</p>
+      </div>
+      <div class="luck-layout">
+        <div class="wheel-stage">
+          <span class="wheel-pointer" aria-hidden="true"></span>
+          <div class="wheel-disc" id="wheel-disc" role="img" aria-label="Vòng quay trúng acc FC Mobile">
+            <span class="wheel-center">OVR<br><strong>CLUB</strong></span>
+          </div>
+        </div>
+        <div class="luck-controls">
+          <div class="luck-balance"><span>ĐIỂM CỦA BẠN</span><strong id="wheel-points">—</strong></div>
+          <p class="customer-orders-empty" id="wheel-login-note">Đăng nhập tài khoản để nạp điểm và quay thưởng.</p>
+          <div class="luck-actions">
+            <button class="button button-primary" id="wheel-spin" type="button">QUAY · 10 ĐIỂM ↗</button>
+            <label class="luck-topup-select">CHỌN GÓI NẠP
+              <select id="wheel-topup-amount">
+                <option value="10000">10.000đ · 10 điểm</option>
+                <option value="20000">20.000đ · 20 điểm</option>
+                <option value="50000">50.000đ · 50 điểm</option>
+                <option value="100000">100.000đ · 100 điểm</option>
+              </select>
+            </label>
+            <button class="button button-secondary" id="wheel-topup" type="button">TẠO MÃ NẠP ĐIỂM</button>
+          </div>
+          <p class="luck-result" id="wheel-result" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+      <div class="luck-prizes-wrap">
+        <div class="luck-prizes-heading"><h3>DANH SÁCH GIẢI & TỶ LỆ</h3><span>10 điểm = 10.000đ · 1.000đ = 1 điểm</span></div>
+        <div class="luck-prizes" id="wheel-prizes"><p class="customer-orders-empty">Đang tải giải thưởng…</p></div>
+      </div>
+      <p class="catalog-disclaimer">Chỉ quay khi đã đăng nhập. Điểm không đổi thành tiền mặt. Vui lòng kiểm tra tỷ lệ giải thưởng trước khi xác nhận.</p>
+    </section>
+
+    <section class="benefits" id="quyen-loi" aria-labelledby="benefits-title">
+      <div class="section-wrap benefits-inner">
+        <div class="benefits-intro">
+          <div class="eyebrow"><span class="eyebrow-line"></span> PLAY WITH CONFIDENCE</div>
+          <h2 id="benefits-title">RÕ RÀNG<br><span>TỪ ĐẦU.</span></h2>
+          <p>Chọn tài khoản, tạo đơn và theo dõi thanh toán ngay trên một trang — rõ ràng ở từng bước.</p>
+        </div>
+        <div class="benefit-list">
+          <article class="benefit-item">
+            <span class="benefit-number">01</span>
+            <div><h3>THÔNG TIN MINH BẠCH</h3><p>OVR, mô tả và giá bán được trình bày rõ ràng ở từng tài khoản.</p></div>
+            <span class="benefit-icon" aria-hidden="true">↗</span>
+          </article>
+          <article class="benefit-item">
+            <span class="benefit-number">02</span>
+            <div><h3>TÌM KIẾM NHANH GỌN</h3><p>Lọc theo mức OVR, ngân sách hoặc tìm kiếm theo nhu cầu của bạn.</p></div>
+            <span class="benefit-icon" aria-hidden="true">⌕</span>
+          </article>
+          <article class="benefit-item">
+            <span class="benefit-number">03</span>
+            <div><h3>THIẾT KẾ ƯU TIÊN BẠN</h3><p>Dễ sử dụng trên điện thoại, máy tính bảng và màn hình lớn.</p></div>
+            <span class="benefit-icon" aria-hidden="true">▣</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works section-wrap" id="huong-dan" aria-labelledby="how-title">
+      <div class="how-heading">
+        <div class="eyebrow"><span class="eyebrow-line"></span> SIMPLE AS THAT</div>
+        <h2 id="how-title">BA BƯỚC <span>VÀO SÂN.</span></h2>
+      </div>
+      <div class="steps">
+        <article class="step-card"><span class="step-no">01 / CHỌN</span><span class="step-icon" aria-hidden="true">⌕</span><h3>TÌM ACC HỢP GU</h3><p>Duyệt đội hình, tìm kiếm hoặc lọc theo OVR và mức giá.</p></article>
+        <article class="step-card"><span class="step-no">02 / XEM</span><span class="step-icon" aria-hidden="true">▤</span><h3>KIỂM TRA CHI TIẾT</h3><p>Xem thông tin đội hình và mức giá trước khi thêm vào giỏ.</p></article>
+        <article class="step-card"><span class="step-no">03 / THANH TOÁN</span><span class="step-icon" aria-hidden="true">↗</span><h3>CHUYỂN KHOẢN & NHẬN ACC</h3><p>Chuyển khoản theo mã đơn. Sau khi cửa hàng xác nhận tiền về, tra cứu đơn để nhận thông tin acc.</p></article>
+      </div>
+    </section>
+
+    <section class="order-lookup section-wrap" id="tra-cuu" aria-labelledby="lookup-title">
+      <div class="lookup-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> ORDER STATUS</div>
+        <h2 id="lookup-title">TRA CỨU<br><span>ĐƠN HÀNG.</span></h2>
+        <p>Nhập mã đơn và số điện thoại đã đặt. Thông tin đăng nhập acc chỉ hiển thị sau khi quản trị viên xác nhận đã nhận tiền.</p>
+      </div>
+      <form class="lookup-form" id="lookup-form">
+        <label>MÃ ĐƠN HÀNG<input name="code" required maxlength="18" placeholder="Ví dụ: FC261010A1B2C3D4" autocomplete="off"></label>
+        <label>SỐ ĐIỆN THOẠI ĐẶT HÀNG<input name="phone" type="tel" required maxlength="20" placeholder="09xx xxx xxx" autocomplete="tel"></label>
+        <button class="button button-primary" type="submit">TRA CỨU ĐƠN <span aria-hidden="true">↗</span></button>
+        <div class="lookup-result" id="lookup-result" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <section class="closing-cta">
+      <div class="cta-content">
+        <div class="eyebrow"><span class="eyebrow-line"></span> THE PITCH IS YOURS</div>
+        <h2>ĐỘI HÌNH TIẾP THEO<br><span>ĐANG CHỜ BẠN.</span></h2>
+        <a class="button button-dark" href="#san-pham">CHỌN ACC NGAY <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="cta-decoration" aria-hidden="true">OVR<br><span>CLUB</span></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#" aria-label="OVR CLUB - Trang chủ">
+      <span class="brand-mark" aria-hidden="true">O<span>.</span></span>
+      <span class="brand-name">OVR<span>CLUB</span></span>
+    </a>
+    <p>Cửa hàng tài khoản FC Mobile VN.</p>
+    <div class="footer-links"><a href="#tra-cuu">Tra cứu đơn</a><a href="admin.html">Quản trị</a></div>
+    <span class="footer-note">KHÔNG PHẢI WEBSITE CHÍNH THỨC CỦA EA SPORTS FC MOBILE.</span>
+  </footer>
+
+  <dialog class="detail-dialog" id="detail-dialog" aria-labelledby="detail-title">
+    <button class="dialog-close" type="button" data-close="detail-dialog" aria-label="Đóng">×</button>
+    <div id="detail-content"></div>
+  </dialog>
+
+  <dialog class="cart-dialog" id="cart-dialog" aria-labelledby="cart-title">
+    <div class="cart-head"><div><div class="eyebrow"><span class="eyebrow-line"></span> YOUR PICKS</div><h2 id="cart-title">GIỎ HÀNG<span>.</span></h2></div><button class="dialog-close" type="button" data-close="cart-dialog" aria-label="Đóng giỏ hàng">×</button></div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-empty" id="cart-empty"><span aria-hidden="true">▤</span><p>Giỏ hàng còn trống.<br>Chọn một đội hình bạn yêu thích nhé.</p><button class="button button-secondary" id="browse-products" type="button">KHÁM PHÁ ACC</button></div>
+    <div class="cart-bottom" id="cart-bottom" hidden>
+      <div class="cart-total"><span>TỔNG TẠM TÍNH</span><strong id="cart-total">0 ₫</strong></div>
+      <button class="button button-primary checkout-button" id="checkout-button" type="button">TIẾP TỤC <span aria-hidden="true">↗</span></button>
+      <p>Acc được giữ trong 24 giờ trong khi chờ chuyển khoản.</p>
+    </div>
+  </dialog>
+
+  <dialog class="checkout-dialog" id="checkout-dialog" aria-labelledby="checkout-title">
+    <button class="dialog-close" type="button" data-close="checkout-dialog" aria-label="Đóng">×</button>
+    <div class="eyebrow"><span class="eyebrow-line"></span> SECURE YOUR SQUAD</div>
+    <h2 id="checkout-title">THÔNG TIN<br><span>ĐẶT HÀNG.</span></h2>
+    <p class="checkout-intro">Đơn sẽ giữ acc trong 24 giờ và được lưu vào lịch sử tài khoản của bạn.</p>
+    <form id="checkout-form">
+      <label>HỌ TÊN<input name="name" required minlength="2" maxlength="80" autocomplete="name" placeholder="Tên người nhận"></label>
+      <label>SỐ ĐIỆN THOẠI<input name="phone" required type="tel" maxlength="20" autocomplete="tel" placeholder="09xx xxx xxx"></label>
+      <div class="checkout-total"><span>TỔNG THANH TOÁN</span><strong id="checkout-total">0 ₫</strong></div>
+      <button class="button button-primary checkout-submit" type="submit">TẠO ĐƠN HÀNG <span aria-hidden="true">↗</span></button>
+      <p class="form-error" id="checkout-error" role="alert"></p>
+    </form>
+  </dialog>
+
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-title">
+    <button class="dialog-close" type="button" data-close="order-dialog" aria-label="Đóng">×</button>
+    <div class="eyebrow"><span class="eyebrow-line"></span> ORDER CREATED</div>
+    <h2 id="order-title">ĐƠN HÀNG<br><span>ĐÃ TẠO.</span></h2>
+    <div id="order-confirmation"></div>
+  </dialog>
+
+  <dialog class="customer-dialog" id="customer-dialog" aria-labelledby="customer-title">
+    <button class="dialog-close" type="button" data-close="customer-dialog" aria-label="Đóng">×</button>
+    <div class="eyebrow"><span class="eyebrow-line"></span> OVR CLUB MEMBER</div>
+    <h2 id="customer-title">TÀI KHOẢN<span>.</span></h2>
+    <div id="customer-auth-panel">
+      <p class="customer-intro">Vui lòng đăng nhập hoặc tạo tài khoản để tiếp tục mua hàng và theo dõi lịch sử đơn.</p>
+      <div class="customer-tabs" role="tablist" aria-label="Đăng nhập hoặc đăng ký">
+        <button class="customer-tab active" type="button" data-customer-tab="login" aria-selected="true">ĐĂNG NHẬP</button>
+        <button class="customer-tab" type="button" data-customer-tab="register" aria-selected="false">TẠO TÀI KHOẢN</button>
+      </div>
+      <form class="customer-form" id="customer-login-form">
+        <label>TÊN TÀI KHOẢN<input name="username" required minlength="3" maxlength="32" autocomplete="username" pattern="(?:[A-Za-z0-9_.]|-)+" placeholder="Tên đăng nhập"></label>
+        <label>MẬT KHẨU<input name="password" required type="password" maxlength="256" autocomplete="current-password" placeholder="Mật khẩu"></label>
+        <button class="button button-primary" type="submit">ĐĂNG NHẬP</button>
+        <p class="form-error" id="customer-login-error" role="alert"></p>
+      </form>
+      <form class="customer-form" id="customer-register-form" hidden>
+        <label>TÊN TÀI KHOẢN<input name="username" required minlength="3" maxlength="32" autocomplete="username" pattern="(?:[A-Za-z0-9_.]|-)+" placeholder="Chữ không dấu, số, . _ -"></label>
+        <label>MẬT KHẨU<input name="password" required type="password" minlength="12" maxlength="256" autocomplete="new-password" placeholder="Tối thiểu 12 ký tự"></label>
+        <button class="button button-primary" type="submit">TẠO TÀI KHOẢN</button>
+        <p class="form-error" id="customer-register-error" role="alert"></p>
+      </form>
+    </div>
+    <div id="customer-account-panel" hidden>
+      <div class="customer-account-heading">
+        <p>Đang đăng nhập: <strong id="customer-username"></strong></p>
+        <button class="customer-logout" id="customer-logout" type="button">ĐĂNG XUẤT</button>
+      </div>
+      <div class="customer-wallet-summary">
+        <span>SỐ DƯ ĐIỂM</span><strong id="customer-wallet-balance">0</strong>
+      </div>
+      <div class="customer-wallet-history" id="customer-wallet-history"></div>
+      <section class="customer-orders-section" aria-labelledby="customer-orders-title">
+        <h3 id="customer-orders-title">LỊCH SỬ ĐƠN HÀNG</h3>
+        <div class="customer-orders" id="customer-orders"></div>
+      </section>
+      <section class="customer-orders-section" aria-labelledby="customer-spins-title">
+        <h3 id="customer-spins-title">ACC TRÚNG TỪ VÒNG QUAY</h3>
+        <div class="customer-orders" id="customer-spin-history"></div>
+      </section>
+      <details class="customer-claim">
+        <summary>Liên kết đơn cũ bằng mã đơn và số điện thoại</summary>
+        <form class="customer-form" id="customer-claim-form">
+          <label>MÃ ĐƠN HÀNG<input name="code" required maxlength="16" placeholder="FC..."></label>
+          <label>SỐ ĐIỆN THOẠI ĐẶT HÀNG<input name="phone" required type="tel" maxlength="20" autocomplete="tel" placeholder="09xx xxx xxx"></label>
+          <button class="button button-secondary" type="submit">LIÊN KẾT ĐƠN</button>
+          <p class="form-error" id="customer-claim-error" role="alert"></p>
+        </form>
+      </details>
+    </div>
+  </dialog>
+
+  <dialog class="topup-dialog" id="topup-dialog" aria-labelledby="topup-title">
+    <button class="dialog-close" type="button" data-close="topup-dialog" aria-label="Đóng">×</button>
+    <div class="eyebrow"><span class="eyebrow-line"></span> ADD LUCKY POINTS</div>
+    <h2 id="topup-title">NẠP <span>ĐIỂM.</span></h2>
+    <div id="topup-details"></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
